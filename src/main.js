@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
-import VueRouter from 'vue-router'
-Vue.config.productionTip = false
-Vue.use(VueRouter)
+import 'vuetify/dist/vuetify.min.css';
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
+import router from './router/index.js' // Import your router instance
+// Vue.config.productionTip = false
+
+
 new Vue({
-  vuetify,
+  vuetify,router,
   render: h => h(App)
 }).$mount('#app')
