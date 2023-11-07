@@ -1,21 +1,25 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
+import AboutUs from '@/components/home/AboutUs'
+import ContactUs from '@/components/home/ContactUs'
 
-  const routerOptions=[
-    // Define your routes here
+Vue.use(VueRouter);
+  const routes=[
+    {
+      path:'/aboutus',
+      name:'AboutUs',
+      component:AboutUs
+    },
+    {
+      path:'/contactus',
+      name:'ContactUs',
+      component:ContactUs
+    },
+    
   ];
-
-
-  const routes = routerOptions.map(route => {
-    return {
-      ...route,
-      component: () => import(`../components/${route.component}.vue`)
-    };
-  });
   
-  Vue.use(Router);
-  
-  export default new Router({
+  const router = new VueRouter({
     mode: "history",
-    routes
+    routes,
   });
+  export default router;
