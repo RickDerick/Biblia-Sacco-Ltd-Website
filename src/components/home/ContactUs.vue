@@ -1,5 +1,5 @@
 <template>
-<v-card elevation="0" class="mx-auto mt-15" flat>
+<v-card elevation="0" class="mt-15" flat>
 <v-container fluid>
 <v-row>
     <v-col cols="12" md="6" sm="6">
