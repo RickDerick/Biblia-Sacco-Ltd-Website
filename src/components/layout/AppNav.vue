@@ -1,4 +1,5 @@
 <template>
+  <div>
   <v-card elevation="0">
   <v-card
     class="max-width=100%" 
@@ -18,23 +19,24 @@
     </v-system-bar>
   </v-card>
   <v-app-bar
-      color="blue"
+      color="primary lighten-2"
       dark
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Bibilia Sacco Ltd</v-toolbar-title>
-      <v-row justify="center" no-gutters>
-        <v-button 
-        v-for="link in links"
-         :key="link"
-          color="white"
-          text
-         rounded
-        class="mx-5">
-        {{ link }}
-        </v-button>
-      </v-row>
+      
+    <v-tabs
+    centered
+      dark
+    >
+      <v-tab>One</v-tab>
+      <v-tab>Two</v-tab>
+      <v-tab>Three</v-tab>
+      <v-tab>Four</v-tab>
+      <v-tab>Five</v-tab>
+      <v-tab>Six</v-tab>
+    </v-tabs>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -67,10 +69,15 @@
       </v-list>
     </v-navigation-drawer>
   </v-card>
+  <carousel/>
+  </div>
   </template>
   
   <script>
+  import Carousel from '@/components/home/Carousel';
   export default {
+    name:'AppNav',
+    components:{Carousel},
     data: () => ({
       drawer: false,
       group: null,
